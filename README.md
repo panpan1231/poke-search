@@ -54,7 +54,6 @@ open index.html
 
 ## 技術細節
 
-- 單一 HTML 檔案（HTML + CSS + JS 全包）
 - 18 種屬性的攻防倍率表完整內建
 - 繁體中文介面
 - Mobile-first RWD 設計，手機與桌面皆適用
