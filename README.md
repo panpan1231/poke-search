@@ -1,4 +1,4 @@
-# Poke Search — 寶可夢屬性相剋查詢
+# Pokex — 寶可夢屬性相剋查詢
 
 純前端單頁工具，快速查詢寶可夢屬性弱點、建立隊伍並取得對戰建議。
 
@@ -44,17 +44,51 @@
    - ⚪ **免疫對手** — 完全不受傷害
 3. 底部列出所有能剋制對手的招式屬性
 
+## 安裝為 App（PWA）
+
+本工具支援 PWA，可以安裝到手機桌面像原生 App 一樣使用，離線也能運作。
+
+**手機（iOS Safari）：**
+
+1. 用 Safari 開啟頁面
+2. 點選分享按鈕 → 「加入主畫面」
+
+**手機（Android Chrome）：**
+
+1. 用 Chrome 開啟頁面
+2. 點選選單 → 「安裝應用程式」
+
+**桌面（Chrome / Edge）：**
+
+- 網址列右側會出現安裝圖示，點擊即可安裝
+
+> 注意：PWA 需要透過 HTTP 伺服器存取（`localhost` 或 `https`），直接開啟 `file://` 無法啟用 Service Worker。本機測試可用：
+>
+> ```
+> npx serve .
+> ```
+
 ## 使用方式
 
-直接在瀏覽器開啟 `index.html` 即可，不需要任何伺服器或安裝步驟。
-
-```
-open index.html
-```
+直接在瀏覽器開啟 `index.html` 即可使用基本功能。若需要 PWA 離線功能，請透過本機伺服器存取。
 
 ## 技術細節
 
+- 單一 HTML 檔案（HTML + CSS + JS 全包）
 - 18 種屬性的攻防倍率表完整內建
 - 繁體中文介面
 - Mobile-first RWD 設計，手機與桌面皆適用
 - 資料持久化使用 localStorage
+
+## 檔案結構
+
+```
+poke-search/
+├── index.html      # 主頁面（HTML + CSS + JS）
+├── manifest.json   # PWA 設定檔
+├── sw.js           # Service Worker（離線快取）
+├── logo.png        # 原始 Logo
+└── icons/
+    ├── icon-192.png
+    └── icon-512.png
+```
